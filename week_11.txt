@@ -1,0 +1,109 @@
+resource url?
+QUESTION ----------------
+Problem Description:
+------------------ANSWER
+def get_valid_input():
+    """
+    Prompts the user for input and validates it.
+    """
+    try:
+        user_input = int(input())
+        if 1 <= user_input <= 100:
+            print("Valid input.")
+        else:
+            print("Error: Number out of allowed range")
+    except ValueError:
+        print("Error: invalid literal for int()")
+
+if __name__ == "__main__":
+    get_valid_input()
+------------------------------
+QUESTION ----------------
+Problem Description:
+------------------ANSWER
+def calculate_square_root(number):
+    try:
+        if number < 0:
+            raise ValueError("Cannot calculate the square root of a negative number.")
+        return number ** 0.5
+    except ValueError as e:
+        return str(e)
+
+user_input = input()
+try:
+    number = float(user_input)
+    result = calculate_square_root(number)
+    print(f"The square root of {number:.1f} is {result:.2f}")
+except ValueError:
+    print("Error: could not convert string to float")
+------------------------------
+QUESTION ----------------
+Problem Description:
+------------------ANSWER
+try:
+    user_age = int(input())
+        if user_age < 0:
+            print("Error: Please enter a valid age.")
+        else:
+            if user_age <= 1:
+                print(f"You are {user_age} year old. ")
+            elif user_age < 13:
+                print(f"You are {user_age} years old.")
+            elif user_age < 20:
+                print(f"You are {user_age} years old.")
+            else:
+                print(f"You are {user_age} years old.")
+except ValueError:
+    print("Error: Please enter a valid age.")
+
+if __name__ == "__main__":
+    main()
+------------------------------
+QUESTION ----------------
+Develop a Python program that safely performs division between two numbers provided by the user. Handle exceptions like division by zero and non-numeric inputs.
+------------------ANSWER
+def safe_divide(a, b):
+    """
+    Safely divides two numbers and handles exceptions.
+    """
+    try:
+        result = a / b
+        return result
+    except ZeroDivisionError:
+        return "Error: Cannot divide or modulo by zero."
+    except ValueError:
+        return "Error: Non-numeric input"
+
+def main():
+    try:
+        num1 = float(input())
+        num2 = float(input())
+        print(safe_divide(num1, num2))
+    except ValueError:
+        print("Error: Non-numeric input provided.")
+
+if __name__ == "__main__":
+    main()
+------------------------------
+QUESTION ----------------
+Write a Python program that asks the user for their age and prints a message based on the age. Ensure that the program handles cases where the input is not a valid integer.
+------------------ANSWER
+def main():
+    try:
+        user_age = int(input("Please enter your age: "))
+        if user_age < 0:
+            print("Error: Please enter a valid age.")
+        elif user_age <= 1:
+            print(f"You are {user_age} year old. You are an infant.")
+        elif user_age < 13:
+            print(f"You are {user_age} years old. You are a child.")
+        elif user_age < 20:
+            print(f"You are {user_age} years old. You are a teenager.")
+        else:
+            print(f"You are {user_age} years old. You are an adult.")
+    except ValueError:
+        print("Error: Please enter a valid age (numeric value).")
+
+if __name__ == "__main__":
+    main()
+------------------------------

@@ -1,0 +1,154 @@
+resource url?
+QUESTION ----------------
+In this exercise, you will create a program that reads words from the user until the user enters a blank line. After the user enters a blank line your program should display each word entered by the user exactly once. The words should be displayed in the same order that they were first entered. For example, if the user enters:
+------------------ANSWER
+lines = []
+
+line = input().strip()
+lines.append(line)
+while len(line) > 0:
+    line = input().strip()
+    if line and line not in lines:
+        lines.append(line)
+
+print(*lines, sep= "\n")
+------------------------------
+QUESTION ----------------
+Assume
+that the given string has enough memory.
+------------------ANSWER
+string = input().strip()
+
+i = 0
+
+while i < len(string):
+    if string[i].isalpha():
+        count = 0
+        char = string[i]
+        i += 1
+        while i < len(string) and string[i].isnumeric():
+            count *= 10
+            count += int(string[i])
+            i += 1
+        print(count * char, end="")
+    else:
+        i += 1
+------------------------------
+QUESTION ----------------
+Given a string S, which contains
+several words, print the count C of the words whose length is atleast L. (You
+can include punctuation marks like comma, full stop also as part of the word
+length. Space alone must be ignored)
+------------------ANSWER
+def count_words(S, L):
+    words = S.split()
+    count = sum(1 for word in words if len(word) >= L)
+    return count
+
+S = input()
+L = int(input())
+print(count_words(S, L))
+------------------------------
+QUESTION ----------------
+Given a string S which is of the format
+USERNAME@DOMAIN.EXTENSION, the program must print the EXTENSION, DOMAIN,
+USERNAME in the reverse order.
+------------------ANSWER
+mail = input()
+username, _, rest = mail.partition("@")
+domain, _, extension = rest.partition(".")
+print(extension, domain, username, sep= "\n")
+------------------------------
+QUESTION ----------------
+String
+should contain only the words are not palindrome.
+------------------ANSWER
+s=input().lower()
+words=s.split()
+s1=""
+for word in words:
+    word=word.lower()
+    if word !=word[::-1]:
+        s1+=word + " "
+        
+s1=s1.strip()
+print(s1)
+------------------------------
+QUESTION ----------------
+Reverse a string without affecting special characters Given a string S, containing special characters and all the alphabets, reverse the string without affecting the positions of the special characters.Input:   A&BOutput:  B&AExplanation:
+As we ignore '&' and As we ignore '&' and then reverse, so answer is "B&A".
+------------------ANSWER
+seq =input()
+
+chars = ['$', '%', '*', '#', '^']
+nums = []
+
+for i in range(len(seq)):
+    if seq[i] not in chars:
+        nums.append(seq[i])
+
+nums.reverse()
+
+for j in seq:
+    if j in chars:
+        idx = seq.index(j)
+        nums.insert(idx, j)
+
+reverse = "".join(nums)
+
+print(reverse)
+------------------------------
+QUESTION ----------------
+Write a program that takes as input a
+string (sentence), and returns its second word in uppercase.
+------------------ANSWER
+s=input()
+l=s.split()
+if len(l)>=2:
+    print(l[1].upper())
+else:
+    print('LESS')
+------------------------------
+QUESTION ----------------
+Robert  is having 2 strings consist of uppercase &
+lowercase english letters. Now he want to compare those two strings
+lexicographically. The letters' case does not matter, that is an uppercase
+letter is considered equivalent to the corresponding lowercase letter.
+------------------ANSWER
+t =int(input())
+for _ in range(t):
+    str1 = input().lower()
+    str2 = input().lower()
+    if str1 == str2:
+        print(0)
+    elif str1 > str2:
+        print(1)
+    else:
+        print(-1)
+------------------------------
+QUESTION ----------------
+Given
+two Strings s1 and s2, remove all the characters from s1 which is present in
+s2.
+------------------ANSWER
+s1=input()
+s2=input()
+s1=''.join(i for i in s1 if i not in s2)
+print(s1)
+------------------------------
+QUESTION ----------------
+Find if a
+String2 is substring of String1. If it is, return the index of the first
+occurrence. else return -1.
+------------------ANSWER
+l=input()
+s1=input()
+for i in range(len(s1)):
+    for j in range(len(l)):
+        if(s1[i]==l[j]):
+            print(j)
+            count=1
+            break
+    if(count==1):
+        break
+------------------------------

@@ -1,0 +1,179 @@
+resource url?
+QUESTION ----------------
+The length of a month varies from 28 to 31 days. In this exercise you will create a program that reads the name of a month from the user as a string. Then your program should display the number of days in that month. Display “28 or 29 days” for February so that leap years are addressed.Sample Input 1FebruarySample Output 1February has 28 or 29 days in it.Sample Input 2MarchSample Output 2March has 31 days in it.Sample Input 3AprilSample Output 3April has 30 days in it.
+------------------ANSWER
+a=input()
+if(a=='January' or a=='March' or a=='May' or a=='July' or a=='August' or a=='October' or a=='December'):
+    print(a,"has 31 days in it.")
+elif(a=='April'or a=='June'or a=='September'or a=='November'):
+    print(a,"has 30 days in it.")
+else:
+    print("February has 28 or 29 days in it.")
+------------------------------
+QUESTION ----------------
+A triangle can be classified based on the lengths of its sides as equilateral, isosceles or scalene. All three sides of an equilateral triangle have the same length. An isosceles triangle has two sides that are the same length, and a third side that is a different length. If all of the sides have different lengths then the triangle is scalene.Write a program that reads the lengths of the three sides of a triangle from the user. Then display a message that states the triangle’s type.Sample Input 1606060Sample Output 1That's a equilateral triangleSample Input 2404080Sample Output 2That's a isosceles triangleSample Input 3506070Sample Output 3That's a scalene triangle
+------------------ANSWER
+a=int(input())
+b=int(input())
+c=int(input())
+if(a==b and b==c):
+    print("That's a equilateral triangle")
+elif(a==b or b==c):
+    print("That's a isosceles triangle")
+else:
+    print("That's a scalene triangle")
+------------------------------
+QUESTION ----------------
+Three numbers form a Pythagorean triple if the
+sum of squares of two numbers is equal to the square of the third. 
+For
+example, 3, 5 and 4 form a Pythagorean triple, since 3*3 + 4*4 = 25 = 5*5 
+You are given three integers, a, b, and c. They
+need not be given in increasing order. If they form a Pythagorean triple, then
+print "yes", otherwise, print "no". Please note that the
+output message is in small letters. 
+Sample Input
+3
+5
+4
+Sample Output
+yes
+Sample Test Cases
+Test Case 1      
+Input
+3
+5
+4
+Output
+yes
+Test Case 2      
+Input
+5
+8
+2
+Output
+no
+------------------ANSWER
+a=int(input())
+b=int(input())
+c=int(input())
+if(a*a+b*b==c*c or a*a+c*c==b*b or b*b+c*c==a*a):
+    print("yes")
+else:
+    print("no")
+------------------------------
+QUESTION ----------------
+Write a program to calculate and print the Electricity bill where the unit consumed by the user is given from test case. It prints the total amount the customer has to pay. The charge are as follows: Unit                                                     Charge / UnitUpto 199                                             @1.20200 and above but less than 400        @1.50400 and above but less than 600        @1.80600 and above                                    @2.00If bill exceeds Rs.400 then a surcharge of 15% will be charged and the minimum bill should be of Rs.100/- Sample Test CasesTest Case 1 Input50 Output100.00 Test Case 2Input 300Output 517.50
+------------------ANSWER
+a=float(input())
+b=a*1.20
+c=a*1.50
+d=a*1.80
+e=a*2.00
+
+if(a<=199):
+    if(b<100):
+        print("100.00")
+    else:
+        print("%.2f"%(b))
+elif(a>=200 and a<400):
+    if(c>=400):
+        print("%.2f"%((c*0.15)+c))
+    else:
+        print("%.2f"%(c))
+elif(a>=400 and a<600):
+    if(d>=400):
+        print("%.2f"%((d*0.15)+d))
+    else:
+        print("%.2f"%(d))
+elif(a>=600):
+    if(e>=400):
+        print("%.2f"%((e*0.15)+e))
+    else:
+        print("%.2f"%(e))
+------------------------------
+QUESTION ----------------
+Write a program to find the eligibility of admission for a professional course based on the following criteria:Marks in Maths >= 65Marks in Physics >= 55Marks in Chemistry >= 50OrTotal in all three subjects >= 180Sample Test CasesTest Case 1Input706080Output The candidate is eligibleTest Case 2 Input508080 OutputThe candidate is eligibleTest Case 3Input506040OutputThe candidate is not eligible
+------------------ANSWER
+a=int(input())
+b=int(input())
+c=int(input())
+d=a+b+c
+if(d>=180):
+    print ("The candidate is eligible")
+else:
+    print ("The candidate is not eligible")
+------------------------------
+QUESTION ----------------
+Write a program that returns the second last digit of the given number. Second last digit is being referred 10the digit in the tens place in the given number.For example, if the given number is 197, the second last digit is 9.Note1 - The second last digit should be returned as a positive number. i.e. if the given number is -197, the second last digit is 9.Note2 - If the given number is a single digit number, then the second last digit does not exist. In such cases, the program should return -1. i.e. if the given number is 5, the second last digit should be returned as -1
+------------------ANSWER
+a=abs(int(input()))
+
+if(a<10):
+    print(-1)
+else:
+    b=a//10%10
+    print(b)
+------------------------------
+QUESTION ----------------
+Most years have 365 days. However, the time required for the Earth to orbit the Sun is actually slightly more than that. As a result, an extra day, February 29, is included in some years to correct for this difference. Such years are referred to as leap years. The rules for determining whether or not a year is a leap year follow:• Any year that is divisible by 400 is a leap year.• Of the remaining years, any year that is divisible by 100 is not a leap year.• Of the remaining years, any year that is divisible by 4 is a leap year.• All other years are not leap years.Write a program that reads a year from the user and displays a message indicating whether or not it is a leap year.Sample Input 11900Sample Output 11900 is not a leap year.Sample Input 22000Sample Output 22000 is a leap year.
+------------------ANSWER
+a=int(input())
+if(a%400==0 and a%4==0):
+    print(a,"is a leap year.")
+else:
+    print(a,"is not a leap year.")
+------------------------------
+QUESTION ----------------
+In this exercise you will create a program that reads a letter of the alphabet from the user. If the user enters a, e, i, o or u then your program should display a message indicating that the entered letter is a vowel. If the user enters y then your program should display a message indicating that sometimes y is a vowel, and sometimes y is a consonant. Otherwise your program should display a message indicating that the letter is a consonant.Sample Input 1iSample Output 1It's a vowel.Sample Input 2ySample Output 2Sometimes it's a vowel... Sometimes it's a consonant.Sample Input3cSample Output 3It's a consonant.
+------------------ANSWER
+a=input()
+if(a=='a' or a=='e' or a=='i' or a=='o' or a=='u'):
+    print("It's a vowel.")
+elif a=='y':
+    print("Sometimes it's a vowel... Sometimes it's a consonant.")
+else:
+    print("It's a consonant.")
+------------------------------
+QUESTION ----------------
+The Chinese zodiac assigns animals to years in a 12 year cycle. One 12 year cycle is shown in the table below. The pattern repeats from there, with 2012 being another year of the dragon, and 1999 being another year of the hare.
+------------------ANSWER
+y=int(input())
+x=y%12
+match(x):
+    case 8:
+        print("%d is the year of the Dragon."%(y))
+    case 9:
+        print("%d is theb year of the Snake."%(y))
+    case 10:
+        print("%d is the year of the Horse."%(y))
+    case 11:
+        print("%d is the year of the Sheep."%(y))
+    case 0:
+        print("%d is the year of the Monkey."%(y))
+    case 1:
+        print("%d is the year of the Rooster."%(y))
+    case 2:
+        print("%d is the year of the Dog."%(y))
+    case 3:
+        print("%d is the year of the pig."%(y))
+    case 4:
+        print("%d is the year of the Rat."%(y))
+    case 5:
+        print("%d is the year of the Ox."%(y))
+    case 6:
+        print("%d is the year of the Tiger."%(y))
+    case 7:
+        print("%d is the year of the Hare."%(y))
+------------------------------
+QUESTION ----------------
+IN / OUT  Ms. Sita, the faculty handling programming lab for you is very strict. Your seniors have told you that she will not allow you to enter the week's lab if you have not completed atleast half the number of problems given last week. Many of you didn't understand this statement and so they requested the good programmers from your batch to write a program to find whether a student will be allowed into a week's lab given the number of problems given last week and the number of problems solved by the student in that week. Input Format:  Input consists of 2 integers. The first integer corresponds to the number of problems given and the second integer corresponds to the number of problems solved.  Output Format:  Output consists of the string “IN” or “OUT”.   Sample Input and Output: Input  8  3  Output OUT
+------------------ANSWER
+a=int(input())
+b=int(input())
+c=a//2
+if b>=c:
+    print("IN")
+else:
+    print("OUT")
+------------------------------

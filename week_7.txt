@@ -1,0 +1,95 @@
+resource url?
+QUESTION ----------------
+There is a malfunctioning keyboard where some letter keys do not work. All other keys on the keyboard work properly.Given a string text of words separated by a single space (no leading or trailing spaces) and a string brokenLetters of all distinct letter keys that are broken, return the number of words in text you can fully type using this keyboard.Example 1:Input: text = "hello world", brokenLetters = "ad"Output: 1Explanation: We cannot type "world" because the 'd' key is broken.
+------------------ANSWER
+a=[i for i in input().split()]
+k=list(input())
+s=set()
+for i in a:
+    n=[j for j in i]
+    m=[z for z in k if z in n]
+    s.update(m)
+print(len(s))
+------------------------------
+QUESTION ----------------
+Write a program to eliminate the common elements in the given 2 arrays and print only the non-repeatingelements and the total number of such non-repeating elements.Input Format:The first line contains space-separated values, denoting the size of the two arrays in integer format respectively.The next two lines contain the space-separated integer arrays to be compared.Sample Input:5 41 2 8 6 52 6 8 10Sample Output:1 5 103Sample  Input: 5 51 2 3 4 51 2 3 4 5Sample Output:NO SUCH ELEMENTS
+------------------ANSWER
+def findNonRepeating(arr1, arr2):
+    set1 = set(arr1)
+    set2 = set(arr2)
+    non_repeating = (set1.symmetric_difference(set2))
+    if non_repeating:
+        print(*non_repeating)
+        print(len(non_repeating))
+    else:
+        print("NO SUCH ELEMENTS")
+n, m = map(int, input().split())  
+arr1 = list(map(int, input().split()))  
+arr2 = list(map(int, input().split()))  
+
+findNonRepeating(arr1, arr2)
+------------------------------
+QUESTION ----------------
+Given an array of strings words, return the words that can be typed using letters of the alphabet on only one row of American keyboard like the image below.In the American keyboard:the first row consists of the characters "qwertyuiop",the second row consists of the characters "asdfghjkl", andthe third row consists of the characters "zxcvbnm". Example 1:Input: words = ["Hello","Alaska","Dad","Peace"]
+Output: ["Alaska","Dad"]
+Example 2:Input: words = ["omk"]
+Output: []
+Example 3:Input: words = ["adsdf","sfd"]
+Output: ["adsdf","sfd"]
+------------------ANSWER
+n=int(input())
+words=[]
+for i in range(n):
+    words.append(input())
+row_map = {
+    'q': 1, 'w': 1, 'e': 1, 'r': 1, 't': 1, 'y': 1, 'u': 1, 'i': 1, 'o': 1, 'p': 1,
+    'a': 2, 's': 2, 'd': 2, 'f': 2, 'g': 2, 'h': 2, 'j': 2, 'k': 2, 'l': 2,
+    'z': 3, 'x': 3, 'c': 3, 'v': 3, 'b': 3, 'n': 3, 'm': 3
+}
+result = []
+    
+for word in words:
+    if len(set(row_map[c.lower()] for c in word)) == 1:
+        result.append(word)
+if result==[]:
+    print('No words')
+else:
+    for i in result:
+        print(i)
+------------------------------
+QUESTION ----------------
+Given a tuple and a positive integer k, the task is to find the count of distinct pairs in the tuple whose sum is equal to K.
+------------------ANSWER
+def count_pairs_with_sum(tup, k):
+    seen = set()
+    pairs = set()
+    
+    for num in tup:
+        complement = k - num
+        if complement in seen:
+            pairs.add((min(num, complement), max(num, complement)))
+        seen.add(num)
+    
+    return len(pairs)
+
+input_tuple = input()
+input_k = int(input())
+tup = tuple(map(int, input_tuple.split(',')))
+result = count_pairs_with_sum(tup, input_k)
+print(result)
+------------------------------
+QUESTION ----------------
+Coders here is a simple task for you, Given string str. Your task is to check whether it is a binary string or not by using python set.Examples:  Input: str = "01010101010"Output: YesInput: str = "REC101"Output: No
+------------------ANSWER
+l=['0','1']
+flag=1
+t=input()
+for i in t:
+    if i not in l:
+        flag=0
+        break
+if flag==1:
+    print("Yes")
+elif flag==0:
+    print("No")
+------------------------------

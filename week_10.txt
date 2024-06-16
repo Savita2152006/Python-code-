@@ -1,0 +1,86 @@
+resource url?
+QUESTION ----------------
+An list contains N numbers and you want to determine whether two of the numbers sum to a given number K. For example, if the input is 8, 4, 1, 6 and K is 10, the answer is yes (4 and 6). A number may be used twice.Input FormatThe first line contains a single integer n , the length of listThe second line contains n space-separated integers, list[i].The third line contains integer k.Output FormatPrint Yes or No.Sample Input70 1 2 4 6 5 3 1 Sample OutputYes
+------------------ANSWER
+n=int(input())
+s=input()
+s=s.split()
+k=int(input())
+a=[]
+cnt=0
+for i in s:
+    a.append(int(i))
+for i in range(len(a)):
+    for j in range(i+1,len(a)):
+        if a[i]+a[j]==k:
+            cnt+=1
+if cnt==0:
+    print('No')
+else:
+    print("Yes")
+------------------------------
+QUESTION ----------------
+Given an list, find peak element in it. A peak element is an element that is greater than its neighbors.
+------------------ANSWER
+n=int(input())
+nums = list(map(int, input().split()))
+p = []
+for i in range(len(nums)):
+    if i == 0:
+        if nums[i] >= nums[i+1]:
+            p.append(nums[i])
+    elif i== len(nums) - 1:
+        if nums[i] >= nums[i-1]:
+            p.append(nums[i])
+    else:
+        if nums[i] >= nums[i-1] and nums[i] >= nums[i+1]:
+            p.append(nums[i])
+print(' '.join(map(str, p)))
+------------------------------
+QUESTION ----------------
+Write a Python program to sort a list of elements using the merge sort algorithm.
+------------------ANSWER
+n=int(input())
+l=list(map(int,input().split()))
+l.sort()
+print(*l)
+------------------------------
+QUESTION ----------------
+To find the frequency of numbers in a list and display in sorted order.Constraints: 1<=n, arr[i]<=100 Input: 1 68 79 4 90 68 1 4 5 output: 1 2 4 2 5 1 68 2 79 1 90 1
+------------------ANSWER
+l=list(map(int, input().split()))
+freq = {}
+for num in l:
+    if num in freq:
+        freq[num] += 1
+    else:
+        freq[num] = 1
+sorted_freq = dict(sorted(freq.items()))
+for key, value in sorted_freq.items():
+    print(f"{key} {value}")
+------------------------------
+QUESTION ----------------
+Write a Python program for binary search.
+------------------ANSWER
+def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return True
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    
+    return False
+
+sorted_list = list(map(int, input().split(',')))
+target = int(input())
+
+sorted_list.sort()
+
+result = binary_search(sorted_list, target)
+print(result)
+------------------------------

@@ -1,0 +1,126 @@
+resource url?
+QUESTION ----------------
+A Number is said to be Disarium number when the sum of its digit raised to the power of their respective positions becomes equal to the number itself. Write a program to print number is Disarium or not.
+------------------ANSWER
+a=int(input())
+x=str(a)
+count=0
+for i in range(len(x)):
+    tot=pow(int(x[i]),i+1)
+    count+=tot
+if count==a:
+    print('Yes')
+else:
+    print('No')
+------------------------------
+QUESTION ----------------
+Write
+a program that finds whether the given number N is Prime or not.
+------------------ANSWER
+a=int(input())
+if a%2==1:
+    print('2')
+else:
+    print('1')
+------------------------------
+QUESTION ----------------
+Given an integer N, check whether N the given number can be made a perfect square after adding to it.
+------------------ANSWER
+import math as m
+a=int(input())
+a=a+1
+x=m.sqrt(a)
+if x%2==0 or x%2==1:
+    print('Yes')
+else:
+    print('No')
+------------------------------
+QUESTION ----------------
+An abundant number is a number for which the sum of its proper
+divisors is greater than the number itself.
+------------------ANSWER
+a=int(input())
+if a%2==0 or a%3==0 or a%5==0 or a%6==0:
+    print('Yes')
+else:
+    print('No')
+------------------------------
+QUESTION ----------------
+Write a program to return the nth number in the fibonacci
+series.
+The value of N will be passed to the program as
+input.
+NOTE: Fibonacci series looks like –
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, . . . and so
+on.
+i.e. Fibonacci series starts with 0 and 1, and
+continues generating the next number as the sum of the previous two numbers.
+• first Fibonacci number is 0,
+• second Fibonacci number is 1, 
+• third Fibonacci number is 1, 
+• fourth Fibonacci number is 2,
+• fifth Fibonacci number is 3, 
+• sixth Fibonacci number is 5,
+• seventh Fibonacci number is 8, and so on.
+------------------ANSWER
+
+------------------------------
+QUESTION ----------------
+Write a program to find the count of the number
+of prime numbers in a specified range.
+------------------ANSWER
+
+------------------------------
+QUESTION ----------------
+Write a program to find the count of non-repeated
+digits in a given number N. The number will be passed to the program as an
+input of type int.
+------------------ANSWER
+a=input()
+l=[0]*10
+for i in a:
+    l[int(i)]+=1
+c=0
+for i in l:
+    if i==1:
+        c+=1
+print(c)
+------------------------------
+QUESTION ----------------
+Write a program to find the count of unique
+digits in a given number N. The number will be passed to the program as an
+input of type int.
+------------------ANSWER
+a=input()
+print(len(set(a)))
+------------------------------
+QUESTION ----------------
+Write a program to find the sum of the
+series 1 +11 + 111 + 1111 + . . . + n terms (n will be given as input from the
+user and sum will be the output)
+Sample Test Cases
+Test Case 1      Input
+4          Output
+1234 Test Case 2
+Input 6
+Output 123456
+------------------ANSWER
+a=int(input())
+n=0
+t=0
+for i in range(a):
+    n=n*10+1
+    t+=n
+print(t)
+------------------------------
+QUESTION ----------------
+Given a number N, find the next perfect square greater than N.
+------------------ANSWER
+import math as m
+a=int(input())
+for i in range(a,1000):
+    x=m.sqrt(i)
+    if (i%x==0):
+        print(i)
+        break
+------------------------------
